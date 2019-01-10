@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exericise2_BMI Kalkulator</string>
+    <string name="btntxt" translatable="false">Beregn BMI</string>
+    <string name="weightinput" translatable="false">Vekten</string>
+    <string name="heightinput" translatable="false">Høyde</string>
+    <string name="uweight" translatable="false">Du er undervektig! :(</string>
+    <string name="oweight" translatable="false">Du er overvektig! :(</string>
+    <string name="normal" translatable="false">BMI er normalt, hold deg i form! :)</string>
+</resources>

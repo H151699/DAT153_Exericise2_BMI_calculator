@@ -52,43 +52,23 @@ public class MainActivity extends AppCompatActivity {
         res = w / (h * h);
         resView.setText(" " + res);
 
-
+        String normal = getResources().getString(R.string.normal);
+        String uweight = getResources().getString(R.string.uweight);
+        String oweight = getResources().getString(R.string.oweight);
 
         if(res <= 18.8){
-            Toast.makeText(getApplicationContext(), "You are under weight", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), uweight, Toast.LENGTH_LONG).show();
 
         } else if((res >= 18.8) && (res < 25)){
-            Toast.makeText(getApplicationContext(), "You are Normal", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), normal, Toast.LENGTH_LONG).show();
 
         }else if(res > 25){
-            Toast.makeText(getApplicationContext(), "You are OverWeight", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), oweight, Toast.LENGTH_LONG).show();
         }
 
     }
 
-/*
-    public void calcuBMI(View v){
 
-       String weightStr = weight.getText().toString();
-       String heightStr = height.getText().toString();
-
-
-       if(weightStr != null && !"".equals(weightStr)
-               && heightStr != null && !"".equals(heightStr)){
-
-
-           float wValue = Float.parseFloat(weightStr);
-           float hValue = Float.parseFloat(heightStr) / 100;
-
-
-
-           float res = wValue / (hValue * hValue);
-
-
-       }
-
-
-*/
     }
 
 
