@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Exericise2_BMI_Calculator</string>
+    <string name="app_name" translatable="false">BMI Calculator</string>
     <string name="weightinput" translatable="false">Enter weight </string>
     <string name="heightinput" translatable="false">Enter height </string>
     <string name="btntxt" translatable="false"> Caculate BMI</string>

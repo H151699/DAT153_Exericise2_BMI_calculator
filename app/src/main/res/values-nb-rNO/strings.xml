@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exericise2_BMI Kalkulator</string>
+    <string name="app_name">BMI Kalkulator</string>
     <string name="btntxt" translatable="false">Beregn BMI</string>
     <string name="weightinput" translatable="false">Vekten</string>
     <string name="heightinput" translatable="false">Høyde</string>

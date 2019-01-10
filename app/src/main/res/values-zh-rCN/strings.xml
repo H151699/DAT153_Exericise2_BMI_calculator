@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exericise2_BMI体重指数计算器</string>
+    <string name="app_name">体重指数计算器(BMI)</string>
     <string name="weightinput" translatable="false">输入体重</string>
     <string name="heightinput" translatable="false">输入身高</string>
     <string name="btntxt" translatable="false">计算BMI</string>

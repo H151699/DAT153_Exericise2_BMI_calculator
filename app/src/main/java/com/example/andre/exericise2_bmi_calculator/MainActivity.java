@@ -1,5 +1,8 @@
 package com.example.andre.exericise2_bmi_calculator;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView resView;
     private Button btn;
 
+    // Shared Preferences
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +38,53 @@ public class MainActivity extends AppCompatActivity {
     resView = (TextView) findViewById(R.id.resultTextView);
     btn = (Button) findViewById(R.id.calcBtn);
 
+    mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    // mPreferences = getSharedPreferences("com.example.exericise2_bmi_calculator", Context.MODE_PRIVATE);
+    mEditor = mPreferences.edit();
+        String weightValue = mPreferences.getString(getString(R.string.weightinput), "");
+        String heightValue = mPreferences.getString(getString(R.string.heightinput), "");
+        weight.setText(weightValue);
+        height.setText(heightValue);
+
+
+
+
+
     btn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
             // when button clicked, process the calculation
             calcuBMI();
+/*
+            // btn clicked, stored inputInfo
+            String wt = weight.getText().toString();
+            String ht = height.getText().toString();
+            mEditor.putString(getString(R.string.weightinput));
+
+*/
 
         }
+
+
     });
 
 
 
-    }
 
+
+ }
+/*
+
+    // SharedPreference
+    private void checkSharedPreferences(){
+        String weightValue = mPreferences.getString(getString(R.string.weightinput), "");
+        String heightValue = mPreferences.getString(getString(R.string.heightinput), "");
+        weight.setText(weightValue);
+        height.setText(heightValue);
+
+    }//
+*/
     // BMI Calculation
     private void calcuBMI(){
 
