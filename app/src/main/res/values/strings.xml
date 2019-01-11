@@ -1,4 +1,8 @@
 <resources>
+    <string name="checkbox" translatable="false">com.example.andre.exericise2_bmi_calculator.checkbox</string>
+    <string name="weight" translatable="false">com.example.andre.exericise2_bmi_calculator.weight</string>
+    <string name="hight" translatable="false">com.example.andre.exericise2_bmi_calculator.hight</string>
+
     <string name="app_name" translatable="false">BMI Calculator</string>
     <string name="weightinput" translatable="false">Enter weight </string>
     <string name="heightinput" translatable="false">Enter height </string>

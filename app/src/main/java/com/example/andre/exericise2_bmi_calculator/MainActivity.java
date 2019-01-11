@@ -5,8 +5,10 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText weight, height;
     private TextView resView;
+    private CheckBox checkBox;
     private Button btn;
 
     // Shared Preferences
@@ -36,17 +39,13 @@ public class MainActivity extends AppCompatActivity {
     weight = (EditText) findViewById(R.id.edtweit);
     height = (EditText) findViewById(R.id.edthit);
     resView = (TextView) findViewById(R.id.resultTextView);
+    checkBox = (CheckBox) findViewById(R.id.checkbx);
     btn = (Button) findViewById(R.id.calcBtn);
 
-    mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    mPreferences = PreferenceManager.getDefaultSharedPreferences(this); // declare "db"
     // mPreferences = getSharedPreferences("com.example.exericise2_bmi_calculator", Context.MODE_PRIVATE);
-    mEditor = mPreferences.edit();
-        String weightValue = mPreferences.getString(getString(R.string.weightinput), "");
-        String heightValue = mPreferences.getString(getString(R.string.heightinput), "");
-        weight.setText(weightValue);
-        height.setText(heightValue);
-
-
+    mEditor = mPreferences.edit(); // tool to put userinput into "db"
+    checkSharedPreferences();
 
 
 
@@ -54,15 +53,43 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+            // save the checkbox preference
+            if(checkBox.isChecked()){
+
+                //set a checkbox when the app starts
+                mEditor.putString(getString(R.string.checkbox), "True");
+                mEditor.commit();
+
+                // save the user input
+                String sWeight = weight.getText().toString();
+                mEditor.putString(getString(R.string.weight), sWeight);
+                mEditor.commit();
+
+                String sHight = height.getText().toString();
+                mEditor.putString(getString(R.string.hight), sHight);
+                mEditor.commit();
+
+            }else{
+
+
+                mEditor.putString(getString(R.string.checkbox), "False");
+                mEditor.commit();
+
+                mEditor.putString(getString(R.string.weight), "");
+                mEditor.commit();
+
+
+                mEditor.putString(getString(R.string.weight), "");
+                mEditor.commit();
+
+            }
+
+
             // when button clicked, process the calculation
             calcuBMI();
-/*
-            // btn clicked, stored inputInfo
-            String wt = weight.getText().toString();
-            String ht = height.getText().toString();
-            mEditor.putString(getString(R.string.weightinput));
 
-*/
+            // btn clicked, stored inputInfo
+
 
         }
 
@@ -74,17 +101,32 @@ public class MainActivity extends AppCompatActivity {
 
 
  }
-/*
+    // Check SharedPreference and set  them accordingly
 
-    // SharedPreference
     private void checkSharedPreferences(){
-        String weightValue = mPreferences.getString(getString(R.string.weightinput), "");
-        String heightValue = mPreferences.getString(getString(R.string.heightinput), "");
+        String checkbox = mPreferences.getString(getString(R.string.checkbox), "False");
+        String weightValue = mPreferences.getString(getString(R.string.weight), "");
+        String heightValue = mPreferences.getString(getString(R.string.hight), "");
+
+        // save value to the textField
         weight.setText(weightValue);
         height.setText(heightValue);
 
+        // set check box. true set check box, false uncheck box
+        if(checkbox.equals("True")){
+            checkBox.setChecked(true);
+
+        }else{
+            checkBox.setChecked(false);
+        }
+
+
     }//
-*/
+
+
+
+
+
     // BMI Calculation
     private void calcuBMI(){
 

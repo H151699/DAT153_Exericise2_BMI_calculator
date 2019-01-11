@@ -7,6 +7,7 @@
     <string name="normal" translatable="false">指数正常 : )</string>
     <string name="uweight" translatable="false">偏瘦 :(</string>
     <string name="oweight" translatable="false">偏胖 :(</string>
+    <string name="checkbox">记住我</string>
 
 
 </resources>

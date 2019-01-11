@@ -7,4 +7,5 @@
     <string name="uweight" translatable="false">Du er undervektig! :(</string>
     <string name="oweight" translatable="false">Du er overvektig! :(</string>
     <string name="normal" translatable="false">BMI er normalt, hold deg i form! :)</string>
+    <string name="checkbox">Husk meg</string>
 </resources>
