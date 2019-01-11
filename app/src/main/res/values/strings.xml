@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">BMI Calculator</string>
+    <string name="weightinput" translatable="false">Enter weight </string>
+    <string name="heightinput" translatable="false">Enter height </string>
+    <string name="btntxt" translatable="false"> Caculate BMI</string>
+    <string name="normal" translatable="false"> Your are normal! </string>
+    <string name="uweight" translatable="false"> Your are under weight! </string>
+    <string name="oweight" translatable="false"> Your are Overweight! </string>
+
+
+</resources>
