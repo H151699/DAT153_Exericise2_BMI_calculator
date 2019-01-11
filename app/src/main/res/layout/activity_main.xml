@@ -48,41 +48,35 @@
         android:text="@string/btntxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edthit"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
 
     <TextView
         android:id="@+id/resultTextView"
-        android:layout_width="76dp"
-        android:layout_height="35dp"
+        android:layout_width="125dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/yellow"
+        android:text="BMI VALUE"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/calcBtn"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edthit" />
+        app:layout_constraintTop_toBottomOf="@+id/checkbx" />
 
     <CheckBox
         android:id="@+id/checkbx"
-        android:layout_width="wrap_content"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="remember info"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edthit"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/edthit" />
 
 </android.support.constraint.ConstraintLayout>
